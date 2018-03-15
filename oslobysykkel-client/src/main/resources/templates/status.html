@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:dt="http://www.thymeleaf.org/dandelion/datatables">
+<head>
+<title>oslobysykkel.no App</title>
+<link rel="SHORTCUT ICON" href="/images/iconHelp.png"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta name="viewport" content="user-scalable=yes, width=640"/>
+</head>
+<body>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>Station ID</th>
+					<th>Station Name</th>
+					<th>Available Bikes</th>
+					<th>No.of Locks</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="station : ${stations}">
+					<td th:text="${station.id}"></td>
+					<td th:text="${station.title}"></td>
+					<td th:text="${station.bikes}"></td>
+					<td th:text="${station.locks}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
